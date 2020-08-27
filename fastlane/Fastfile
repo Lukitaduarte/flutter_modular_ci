@@ -1,0 +1,13 @@
+# update_fastlane
+
+###
+###  Flutter
+###
+
+platform :flutter do
+  desc "runs pull request flow"
+  lane :pr do
+    sh "./fastlane/scripts/tests.sh"
+    sh "./fastlane/scripts/lint.sh"
+  end
+end
