@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: cd .. &amp;&amp; ./fastlane/scripts/tests.sh" time="36.25158">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: cd .. &amp;&amp; ./fastlane/scripts/lint.sh" time="6.1029">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

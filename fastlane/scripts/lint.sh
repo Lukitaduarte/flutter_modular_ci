@@ -2,8 +2,6 @@
 
 error=false
 
-cd ..
-
 # run flutter lint and set error flag 
 # if an issue in lint is founded
 flutter analyze || error=true

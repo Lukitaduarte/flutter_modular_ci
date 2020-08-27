@@ -7,7 +7,7 @@
 platform :flutter do
   desc "runs pull request flow"
   lane :pr do
-    sh "./fastlane/scripts/tests.sh"
-    sh "./fastlane/scripts/lint.sh"
+    sh "cd .. && ./fastlane/scripts/tests.sh"
+    sh "cd .. && ./fastlane/scripts/lint.sh"
   end
 end
