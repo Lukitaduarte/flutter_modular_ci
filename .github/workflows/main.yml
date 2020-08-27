@@ -1,0 +1,50 @@
+name: Pull Request Flow
+
+# triggers
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pr:
+    name: Pull Request Check
+    runs-on: macos-latest
+    steps: 
+      - name: Checkout Branch
+        uses: actions/checkout@v2.3.2
+        
+      - name: Setup Flutter Stable Channel
+        uses: subosito/flutter-action@v1.3.2
+        with:
+          channel: 'stable'
+
+      - name: Cache Flutter dependency
+        uses: actions/cache@v2
+        env:
+          pub-cache-key: pub-cache
+          pub-path: ~/.pub-cache
+        with:
+          path: ${{ env.pub-path }}
+          key: ${{ runner.os }}-build-${{ env.pub-cache-key }}
+          restore-keys: ${{ runner.os }}-build-${{ env.pub-cache-key }}
+
+      - name: Cache Fastlane dependencies
+        uses: actions/cache@v2
+        env:
+          fastlane-cache-key: fastlane-cache
+          fastlane-path: ~/.gem
+        with:
+          path: ${{ env.fastlane-path }}
+          key: ${{ runner.os }}-build-${{ env.fastlane-cache-key }}-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-build-${{ env.fastlane-cache-key }}
+
+      - name: Install Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+
+      # run lane pr
+      - name: Run Lint and Tests
+        run: bundle exec fastlane flutter pr
