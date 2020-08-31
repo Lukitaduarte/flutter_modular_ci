@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types: [edited, synchronize, reopened, opened]
+    branches:
+      - master
 
 jobs:
   pr:
