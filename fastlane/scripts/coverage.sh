@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# sudo apt install lcov
+sudo apt install lcov
 
 regex='[0-9].*[%]'
 coverage=$(lcov --summary lcov.info)
