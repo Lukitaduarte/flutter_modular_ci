@@ -5,12 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: cd .. &amp;&amp; ./fastlane/scripts/tests.sh" time="36.25158">
+      <testcase classname="fastlane.lanes" name="0: cd .. &amp;&amp; ./fastlane/scripts/tests.sh" time="10.710287">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: cd .. &amp;&amp; ./fastlane/scripts/lint.sh" time="6.1029">
+      <testcase classname="fastlane.lanes" name="1: cd .. &amp;&amp; ./fastlane/scripts/coverage.sh" time="19.623815">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: cd .. &amp;&amp; ./fastlane/scripts/lint.sh" time="3.461141">
         
       </testcase>
     

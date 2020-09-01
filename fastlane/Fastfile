@@ -8,11 +8,11 @@ platform :flutter do
   desc "runs pull request flow"
   lane :pr do
     sh "cd .. && ./fastlane/scripts/tests.sh"
-    sh "cd .. && chmod 775 ./fastlane/scripts/coverage.sh"
+    sh "cd .. && ./fastlane/scripts/coverage.sh"
     sh "cd .. && ./fastlane/scripts/lint.sh"
     danger(
      danger_id = "report-coverage",
-     dangerfile = "Dangerfile",
+     dangerfile = "../Dangerfile",
      github_api_token: ENV["GITHUB_TOKEN"],
      verbose: true
     )
