@@ -1,6 +1,6 @@
-report_path="coverage.txt"
-
 def report_coverage
+  report_path="coverage.txt"
+  
   if File.exist?(report_path)
     report = File.open(report_path)
     markdown(report)
