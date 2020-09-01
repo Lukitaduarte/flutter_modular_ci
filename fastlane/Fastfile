@@ -10,12 +10,15 @@ platform :flutter do
     sh "cd .. && ./fastlane/scripts/tests.sh"
     sh "cd .. && ./fastlane/scripts/coverage.sh"
     sh "cd .. && ./fastlane/scripts/lint.sh"
-    danger(
-     danger_id = "report-coverage",
-     dangerfile = "../Dangerfile",
-     github_api_token: ENV["GITHUB_TOKEN"],
-     verbose: true
-    )
+    run_danger
   end
 end
 
+lane :run_danger do
+  danger(
+    danger_id = "report-coverage",
+    dangerfile = "Dangerfile",
+    github_api_token: ENV["GITHUB_TOKEN"],
+    verbose: true
+  )
+end
