@@ -12,7 +12,7 @@ end
 report_coverage()
 
 active_files = (git.modified_files + git.added_files).uniq
-markdowns = active_files.select { |file| file.basename? 'coverage.txt' }
+markdowns = active_files.select { |file| file.include?('coverage.txt') }
 markdowns.each do |filename|
   file = File.read(filename)
   lines = file.lines
