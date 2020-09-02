@@ -1,6 +1,6 @@
 def report_coverage
   report_path="coverage.txt"
-  
+
   if File.exist?(report_path)
     report = File.open(report_path)
     markdown(report.read)
@@ -10,3 +10,13 @@ def report_coverage
 end
 
 report_coverage()
+
+active_files = (git.modified_files + git.added_files).uniq
+markdowns = active_files.select { |file| file.basename? 'coverage.txt' }
+markdowns.each do |filename|
+  file = File.read(filename)
+  lines = file.lines
+  lines.each do |l|
+      markdown(l) if l.include? "Development"
+  end
+end
