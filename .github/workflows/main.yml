@@ -42,6 +42,9 @@ jobs:
           path: ${{ env.fastlane-path }}
           key: ${{ runner.os }}-build-${{ env.fastlane-cache-key }}-${{ hashFiles('Gemfile.lock') }}
           restore-keys: ${{ runner.os }}-build-${{ env.fastlane-cache-key }}
+          
+      - name: Install Lcov
+        run: brew install lcov
 
       - name: Install Fastlane
         uses: ruby/setup-ruby@v1
