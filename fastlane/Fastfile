@@ -16,9 +16,19 @@ platform :flutter do
 end
 
 lane :commit do
-  git_add(path: ["*.txt", "*.md"], shell_escape: false)
-  git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
-  push_to_git_remote(remote_branch: "master", force: true)
+  git_add(
+    path: ["*.txt", "*.md"],
+    shell_escape: false
+  )
+  git_commit(
+    path: ["./*.txt", "./*.md"],
+    message: "Update documentation"
+  )
+  push_to_git_remote(
+    remote_branch: "master",
+    set_upstream: true,
+    tags: false
+  )
 end
 
 lane :run_danger do
