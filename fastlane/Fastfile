@@ -18,7 +18,7 @@ end
 lane :commit do
   git_add(path: ["*.txt", "*.md"], shell_escape: false)
   git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
-  push_to_git_remote(remote_branch: "master")
+  push_to_git_remote(remote_branch: "master", force: true)
 end
 
 lane :run_danger do
