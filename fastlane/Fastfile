@@ -16,7 +16,7 @@ platform :flutter do
 end
 
 lane :commit do
-  sh("git checkout -b docs/bump-coverage")
+  sh("git fetch && git checkout -b docs/bump-coverage")
   git_add(
     path: ["*.txt", "*.md"],
     shell_escape: false
