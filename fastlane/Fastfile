@@ -11,6 +11,7 @@ platform :flutter do
     sh "cd .. && ./fastlane/scripts/coverage.sh"
     sh "cd .. && ./fastlane/scripts/lint.sh"
     run_danger
+    git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
   end
 end
 
