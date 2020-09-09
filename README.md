@@ -1,4 +1,4 @@
-# flutter_modular_ci [![Coverage](https://badgen.net/badge/coverage/{percent}/green?icon=github)](https://badgen.net/badge/coverage/{percent}/green?icon=github)
+# flutter_modular_ci [![Coverage](https://badgen.net/badge/coverage/$percent/green?icon=github)](https://badgen.net/badge/coverage/{percent}/green?icon=github)
 
 A new Flutter project.
 
