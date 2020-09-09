@@ -2,9 +2,6 @@ name: Pull Request Flow
 
 # triggers
 on:
-  push:
-    branches:
-      - master
   pull_request:
     types: [edited, synchronize, reopened, opened]
     branches:
