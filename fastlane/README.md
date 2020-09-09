@@ -15,6 +15,19 @@ Install _fastlane_ using
 or alternatively using `brew install fastlane`
 
 # Available Actions
+### commit
+```
+fastlane commit
+```
+
+### run_danger
+```
+fastlane run_danger
+```
+
+
+----
+
 ## flutter
 ### flutter pr
 ```
