@@ -212,6 +212,7 @@ PLATFORMS
 DEPENDENCIES
   danger
   fastlane
+  git-commit
 
 BUNDLED WITH
    1.17.2
